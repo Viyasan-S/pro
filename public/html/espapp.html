@@ -18,13 +18,14 @@
       max-width: 90%;
       margin: 50px auto;
       padding: 20px;
-      background-color: #fff;
+      background-color: #451952;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
 
     h1 {
       text-align: center;
+      color: #F39F5A;
     }
 
     .data-container {
@@ -43,6 +44,7 @@
     .data-item h2 {
       font-size: 18px;
       margin-bottom: 5px;
+      color: white;
     }
 
     .value {
@@ -81,94 +83,106 @@
       font-size: 20px;
       border-radius: 10px;
       border: none;
-      background-color: #fff;
+      background-color: #F39F5A;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
 
     .navbar {
-      background-color: #333;
-      overflow: hidden;
+      background-color: #451952;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
     }
 
-    .navbar-brand {
-      float: left;
-      padding: 14px 16px;
+    .logo-text {
+      text-align: center;
+    }
+
+    .logo {
       color: white;
+      font-size: 1.5rem;
       text-decoration: none;
-      font-size: 18px;
     }
 
-    .navbar-brand:hover {
-      /* background-color: #ddd; */
-      color: black;
+    ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
     }
 
-    .navbar-nav {
-      float: right;
+    li {
       margin-right: 20px;
     }
 
-    .navbar-nav a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
+    a {
       text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffd700;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      li {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    .logo-img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .predictive {
+      color: white;
+      cursor: pointer;
       font-weight: bold;
     }
 
-    .navbar-nav a:hover {
-      /* background-color: #ddd; */
-      color: yellow;
-      
-    }
-
-    @media only screen and (max-width: 768px) {
-      .data-item {
-        width: 100%;
-      }
+    .predictive:hover {
+      color: #F39F5A;
     }
   </style>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+  </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <!-- Navbar brand/logo -->
-      <a class="navbar-brand" href="#">Firebase Data</a>
-      <!-- Navbar toggler for mobile -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../src/components/Pages/Home.js">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../src/components/Pages/Interactivemap.js">Interactive Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../src/components/Pages/Adfeatue.js">Advanced Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./espapp.html">Predictive Maintenance</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../src/components/Pages/Report.js">Reporting</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../src/components/Pages/Dashboard.js">Dashboard</a>
-          </li>
-        </ul>
-      </div>
+  <div class="navbar">
+    <div class="logo">
+      <img src="./new.png" alt="png" class="logo-img">
     </div>
-  </nav>
+    <ul>
+      <li><a href="../../src/components/Pages/Home.js">Home</a></li>
+      <li><a href="../../src/components/Pages/Interactivemap.js">Interactive Map</a></li>
+      <li><a href="../../src/components/Pages/Adfeatue.js">Advanced Features</a></li>
+      <li><a href="./espapp.html">Predictive Maintenance</a></li>
+      <li><a href="../../src/components/Pages/Report.js">Reporting</a></li>
+      <li><a href="../../src/components/Pages/Dashboard.js">Dashboard</a></li>
+      <li><a href="./level.html">Display</a></li>
+      <li><a href="./login.html">Login</a></li>
+      
+    </ul>
+  </div>
 
   <div class="container">
     <h1>Flow Sensor Data</h1>
@@ -207,7 +221,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-
 
   <script>
     // Your JavaScript code here
